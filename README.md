@@ -9,16 +9,21 @@ For example, suppose you have a 3 by 3 puzzle with the four corners filled in so
 
 
 ?- Puzzle = [['#',h,'#'],[_,_,_],['#',_,'#']]
+
 A word list will be represented as a list of lists. Each list is a list of characters, spelling a word. For the above puzzle, the accompanying word list may be:
 
 
 
 ?- WordList = [[h,a,t], [b,a,g]]
+
 You can assume that when your puzzle_solution/2 predicate is called, both arguments will be a proper list of proper lists, and its second argument will be ground. You may assume your code will only be tested with proper puzzles, which have at most one solution. Of course, if the puzzle is not solvable, the predicate should fail, and it should never succeed with a puzzle argument that is not a valid solution. For example, your program would solve the above puzzle as below:
 
 
 
 ?- Puzzle = [['#',h,'#'],[_,_,_],['#',_,'#']], WordList = [[h,a,t], [b,a,g]], puzzle_solution(Puzzle, WordList).
+
 Puzzle = [[#, h, #], [b, a, g], [#, t, #]],
+
 WordList = [[h, a, t], [b, a, g]] ;
+
 false.
